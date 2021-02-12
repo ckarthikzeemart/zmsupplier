@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 /**
  * Created by RajPrudhviMarella on 11/Feb/2021.
@@ -19,4 +21,17 @@ class Constants {
 
   static const String termsUrl = "https://www.zeemart.asia/terms";
   static const String privacyUrl = "https://www.zeemart.asia/privacy-policy";
+  static const String loginInfo = "loginInfo";
+}
+
+class SharedPref {
+  saveData(String key, value) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString(key, json.encode(value));
+  }
+
+  readData(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    return json.decode(prefs.getString(key));
+  }
 }
