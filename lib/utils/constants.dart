@@ -16,4 +16,7 @@ class Constants {
   static const String txt_log_out = "Sign Out";
   static const String txt_support = "Support";
   static const String txt_account = "Account";
+
+  static const String termsUrl = "https://www.zeemart.asia/terms";
+  static const String privacyUrl = "https://www.zeemart.asia/privacy-policy";
 }
